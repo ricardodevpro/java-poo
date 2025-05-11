@@ -65,6 +65,8 @@ public class Geometria {
 			triangulo1.exibirInformacoes();
 			triangulo1.calcularArea();
 			triangulo1.calcularPerimetro();
+			triangulo1.definirTipoTriangulo();
+			triangulo1.definirTrianguloRetangulo();
 		}
 	}
 }

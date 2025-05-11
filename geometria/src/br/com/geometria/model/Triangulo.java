@@ -1,5 +1,7 @@
 package br.com.geometria.model;
 
+import java.util.Arrays;
+
 public class Triangulo {
 
 	public double base, ladoB, ladoC, area, altura, perimetro;
@@ -31,5 +33,32 @@ public class Triangulo {
 	public void calcularPerimetro() {
 		perimetro = base + ladoB + ladoC;
 		System.out.println("O perimetro do objeto " + nome + " é " + perimetro);
+	}
+
+	public void definirTipoTriangulo() {
+		if (base == ladoB && base == ladoC && ladoB == ladoC) {
+			System.out.println("Este é um Triângulo Equilátero");
+		} else if (base == ladoB || base == ladoC || ladoB == ladoC) {
+			System.out.println("Este é um Triângulo Isoceles");
+		} else {
+			System.out.println("Este é um Triângulo Escaleno");
+		}
+	}
+
+	public void definirTrianguloRetangulo() {
+
+		double [] ladosTriangulo = {base, ladoB, ladoC};
+
+		Arrays.sort(ladosTriangulo); // Ordena as variaveis do menor para o maior.
+
+		double cateto1 = ladosTriangulo[0];
+		double cateto2 = ladosTriangulo[1];
+		double hipotenusa = ladosTriangulo[2];
+
+		if (Math.pow(cateto1, 2 ) + Math.pow(cateto2, 2) == Math.pow(hipotenusa, 2)) {
+			System.out.println("Este Triângulo é um Triângulo Retângulo");
+		} else {
+			System.out.println("Este Triângulo não é um Triângulo Retângulo");
+		}
 	}
 }
